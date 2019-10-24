@@ -48,6 +48,7 @@ class Game {
 
     func computerVsPlayer() -> String {
         var winOrLose = String()
+        compScore = randomComputerScore
         switch compScore {
         case 21:
             winOrLose = "You Lose... you got \(player.score) and the computer got Blackjack"
@@ -55,10 +56,10 @@ class Game {
             if player.score > compScore && player.score < 22 {
                 winOrLose = "You Win... you got \(player.score) to the computer's \(compScore)"
             } else {
-                winOrLose = "You Lose... you got \(player.score) to the computers \(compScore)"
+                winOrLose = "You Lose... you got \(player.score) to the computer's \(compScore)"
             }
-        case 22...28:
-            winOrLose = "You Win... you got \(player.score) to the computers \(compScore)"
+        case 22...27:
+            winOrLose = "You Win... you got \(player.score) and the computer Busted with \(compScore)"
         default:
             winOrLose = "error"
         }

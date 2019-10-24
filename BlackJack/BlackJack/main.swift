@@ -10,10 +10,24 @@ import Foundation
 
 let game = Game()
 var playAgain = true
-
+print("""
+    ██╗     ███████╗████████╗███████╗    ██████╗ ██╗      █████╗ ██╗   ██╗
+    ██║     ██╔════╝╚══██╔══╝██╔════╝    ██╔══██╗██║     ██╔══██╗╚██╗ ██╔╝
+    ██║     █████╗     ██║   ███████╗    ██████╔╝██║     ███████║ ╚████╔╝
+    ██║     ██╔══╝     ██║   ╚════██║    ██╔═══╝ ██║     ██╔══██║  ╚██╔╝
+    ███████╗███████╗   ██║   ███████║    ██║     ███████╗██║  ██║   ██║
+    ╚══════╝╚══════╝   ╚═╝   ╚══════╝    ╚═╝     ╚══════╝╚═╝  ╚═╝   ╚═╝
+██████╗ ██╗      █████╗  ██████╗██╗  ██╗     ██╗ █████╗  ██████╗██╗  ██╗    ██╗██╗██╗
+██╔══██╗██║     ██╔══██╗██╔════╝██║ ██╔╝     ██║██╔══██╗██╔════╝██║ ██╔╝    ██║██║██║
+██████╔╝██║     ███████║██║     █████╔╝      ██║███████║██║     █████╔╝     ██║██║██║
+██╔══██╗██║     ██╔══██║██║     ██╔═██╗ ██   ██║██╔══██║██║     ██╔═██╗     ╚═╝╚═╝╚═╝
+██████╔╝███████╗██║  ██║╚██████╗██║  ██╗╚█████╔╝██║  ██║╚██████╗██║  ██╗    ██╗██╗██╗
+╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝    ╚═╝╚═╝╚═╝
+""")
 repeat {
+    
     repeat {
-        print("Please select \"hit\" or \"pass\"")
+        print("\nPlease select \"hit\" or \"pass\"")
         let userSelection = readLine() ?? ""
         let userSelectionLower = userSelection.lowercased()
     switch userSelectionLower {
@@ -21,14 +35,13 @@ repeat {
         game.hitMe()
         game.hitPlayer = true
         if game.player.score > 21 {
-            print("BIG OLD BUST")
+            print("\nBIG OLD BUST")
             game.hitPlayer = false
         } else if game.player.score == 21 {
-            print("BLACKJACK... You Win!!!")
+            print("\nBLACKJACK 🤑🤑🤑... You Win!!!")
             game.hitPlayer = false
         }
     case "pass":
-        print(game.stopHits())
         print(game.computerVsPlayer())
         game.hitPlayer = false
     default:
@@ -37,16 +50,23 @@ repeat {
         
     } while game.hitPlayer
 
-
-
-    print("Would you like to play again \"yes\" or \"no\"")
-    let playAgainAsk = readLine() ?? ""
-    let playAgainAskLower = playAgainAsk.lowercased()
-    if playAgainAskLower == "yes" {
-        game.newGame()
-    } else {
-        print("Thanks for playing!!!")
-        playAgain = false
+    var askAgain = true
+    while askAgain == true {
+        print("\nWould you like to play again \"yes\" or \"no\"")
+        let playAgainAsk = readLine() ?? ""
+        let playAgainAskLower = playAgainAsk.lowercased()
+        if playAgainAskLower == "yes" {
+            game.newGame()
+            askAgain = false
+        } else if playAgainAskLower == "no" {
+            print("\nThanks for playing!!!")
+            playAgain = false
+            askAgain = false
+        } else {
+            print("\nPlease enter \"yes\" or \"no\"")
+            askAgain = true
+        }
     }
+    
 
 } while playAgain
