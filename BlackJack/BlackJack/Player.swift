@@ -1,5 +1,5 @@
 //
-//  Suit.swift
+//  Player.swift
 //  BlackJack
 //
 //  Created by Kelby Mittan on 10/24/19.
@@ -8,8 +8,9 @@
 
 import Foundation
 
-enum Suit: String, CaseIterable {
-    case diamond = "♦️" , heart = "♥️", spaid = "♠️", club = "♣️"
+struct Player {
+    var score = Int()
+    var playerName = String()
+    var cards = [Card]()
+    
 }
-
-

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		024F717B2361EDD100C0D173 /* Suit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F717A2361EDD100C0D173 /* Suit.swift */; };
+		024F717D2361F44C00C0D173 /* FaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F717C2361F44C00C0D173 /* FaceCard.swift */; };
+		024F717F2361F57700C0D173 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F717E2361F57700C0D173 /* Game.swift */; };
+		024F71812361F5F000C0D173 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F71802361F5F000C0D173 /* Player.swift */; };
 		576D1E602356839800765B16 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D1E5F2356839800765B16 /* main.swift */; };
 		576D1E692356845300765B16 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D1E682356845300765B16 /* Card.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +29,9 @@
 
 /* Begin PBXFileReference section */
 		024F717A2361EDD100C0D173 /* Suit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suit.swift; sourceTree = "<group>"; };
+		024F717C2361F44C00C0D173 /* FaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCard.swift; sourceTree = "<group>"; };
+		024F717E2361F57700C0D173 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		024F71802361F5F000C0D173 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		576D1E5C2356839800765B16 /* BlackJack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BlackJack; sourceTree = BUILT_PRODUCTS_DIR; };
 		576D1E5F2356839800765B16 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		576D1E682356845300765B16 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -62,6 +68,9 @@
 			isa = PBXGroup;
 			children = (
 				576D1E682356845300765B16 /* Card.swift */,
+				024F717E2361F57700C0D173 /* Game.swift */,
+				024F71802361F5F000C0D173 /* Player.swift */,
+				024F717C2361F44C00C0D173 /* FaceCard.swift */,
 				024F717A2361EDD100C0D173 /* Suit.swift */,
 				576D1E5F2356839800765B16 /* main.swift */,
 			);
@@ -127,7 +136,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				576D1E602356839800765B16 /* main.swift in Sources */,
+				024F717F2361F57700C0D173 /* Game.swift in Sources */,
 				024F717B2361EDD100C0D173 /* Suit.swift in Sources */,
+				024F717D2361F44C00C0D173 /* FaceCard.swift in Sources */,
+				024F71812361F5F000C0D173 /* Player.swift in Sources */,
 				576D1E692356845300765B16 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,7 +264,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZEKMNK5YD3;
+				DEVELOPMENT_TEAM = 87F72Z6LFG;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -263,7 +275,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZEKMNK5YD3;
+				DEVELOPMENT_TEAM = 87F72Z6LFG;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

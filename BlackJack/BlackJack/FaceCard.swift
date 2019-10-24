@@ -1,5 +1,5 @@
 //
-//  Suit.swift
+//  FaceCard.swift
 //  BlackJack
 //
 //  Created by Kelby Mittan on 10/24/19.
@@ -8,8 +8,6 @@
 
 import Foundation
 
-enum Suit: String, CaseIterable {
-    case diamond = "♦️" , heart = "♥️", spaid = "♠️", club = "♣️"
+enum FaceCard: String, CaseIterable {
+    case jack = "🎃", queen = "👸", king = "🤴"
 }
-
-
