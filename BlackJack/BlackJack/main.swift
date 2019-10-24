@@ -10,6 +10,12 @@ import Foundation
 
 let game = Game()
 var playAgain = true
+
+print("Please enter your name!")
+let getName = readLine() ?? ""
+game.getName(getName)
+sleep(1)
+print()
 print("""
     ██╗     ███████╗████████╗███████╗    ██████╗ ██╗      █████╗ ██╗   ██╗
     ██║     ██╔════╝╚══██╔══╝██╔════╝    ██╔══██╗██║     ██╔══██╗╚██╗ ██╔╝
@@ -35,10 +41,10 @@ repeat {
         game.hitMe()
         game.hitPlayer = true
         if game.player.score > 21 {
-            print("\nBIG OLD BUST")
+            print("\nUh Oh \(getName)... you Busted!!!")
             game.hitPlayer = false
         } else if game.player.score == 21 {
-            print("\nBLACKJACK 🤑🤑🤑... You Win!!!")
+            print("\nBLACKJACK 🤑🤑🤑... Way to go \(getName), you Win!!!")
             game.hitPlayer = false
         }
     case "pass":

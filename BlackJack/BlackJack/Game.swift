@@ -26,6 +26,16 @@ class Game {
     var compScore = Int()
     
     var cardArr = [String]()
+    
+    func getName(_ name: String) {
+        player.playerName = name
+        print("Welcome \(name).....")
+        for _ in 1...3 {
+            sleep(1)
+            print("🔀🔀🔀🔀🔀🔀🔀🔀🔀🔀🔀")
+            print("🃏🃏🃏🃏🃏🃏🃏🃏🃏🃏🃏")
+        }
+    }
 
     func hitMe() {
         deck = deck.shuffled()
@@ -51,15 +61,15 @@ class Game {
         compScore = randomComputerScore
         switch compScore {
         case 21:
-            winOrLose = "You Lose... you got \(player.score) and the computer got Blackjack"
+            winOrLose = "Sorry \(player.playerName), you lost... you got \(player.score) and the computer got Blackjack"
         case 17...20:
             if player.score > compScore && player.score < 22 {
-                winOrLose = "You Win... you got \(player.score) to the computer's \(compScore)"
+                winOrLose = "Way to go \(player.playerName), you won... you got \(player.score) to the computer's \(compScore)"
             } else {
-                winOrLose = "You Lose... you got \(player.score) to the computer's \(compScore)"
+                winOrLose = "Sorry \(player.playerName), you lost... you got \(player.score) to the computer's \(compScore)"
             }
         case 22...27:
-            winOrLose = "You Win... you got \(player.score) and the computer Busted with \(compScore)"
+            winOrLose = "Way to go \(player.playerName), you won... you got \(player.score) and the computer Busted with \(compScore)"
         default:
             winOrLose = "error"
         }
