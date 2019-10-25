@@ -37,20 +37,34 @@ class Game {
         }
     }
 
-    func hitMe() {
+    func startHand() {
         deck = deck.shuffled()
         if let validCard = deck.popLast() {
             player.score = player.score + validCard.value
             cardArr.append(validCard.stringify().description)
-            for card in cardArr {
-                print(card, terminator: " ")
+            if let card2 = deck.popLast(){
+                player.score = player.score + card2.value
+                cardArr.append(card2.stringify().description)
+                for card in cardArr {
+                    print(card, terminator: " ")
+                }
             }
-            
             print("... Your current score is \(player.score)")
         }
     }
     
-
+    func hitMe() {
+        deck = deck.shuffled()
+        if let vCard = deck.popLast() {
+            player.score = player.score + vCard.value
+            cardArr.append(vCard.stringify().description)
+            for card in cardArr {
+                print(card, terminator: " ")
+            }
+            print("... Your current score is \(player.score)")
+        }
+    }
+    
     func stopHits() -> Int {
         compScore = randomComputerScore
         return compScore
@@ -60,8 +74,10 @@ class Game {
         var winOrLose = String()
         compScore = randomComputerScore
         switch compScore {
+        case player.score:
+            winOrLose = "Looks like a push.... you both got \(player.score)"
         case 21:
-            winOrLose = "Sorry \(player.playerName), you lost... you got \(player.score) and the computer got Blackjack"
+            winOrLose = "Sorry \(player.playerName), you lost... you got \(player.score) and the computer got\(compScore) a.k.a. Blackjack"
         case 17...20:
             if player.score > compScore && player.score < 22 {
                 winOrLose = "Way to go \(player.playerName), you won... you got \(player.score) to the computer's \(compScore)"

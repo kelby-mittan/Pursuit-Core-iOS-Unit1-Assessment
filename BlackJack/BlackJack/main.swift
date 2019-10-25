@@ -31,31 +31,42 @@ print("""
 ╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝    ╚═╝╚═╝╚═╝
 """)
 repeat {
-    
-    repeat {
-        print("\nPlease select \"hit\" or \"pass\"")
-        let userSelection = readLine() ?? ""
-        let userSelectionLower = userSelection.lowercased()
-    switch userSelectionLower {
-    case "hit":
-        game.hitMe()
-        game.hitPlayer = true
-        if game.player.score > 21 {
-            print("\nUh Oh \(getName)... you Busted!!!")
-            game.hitPlayer = false
-        } else if game.player.score == 21 {
-            print("\nBLACKJACK 🤑🤑🤑... Way to go \(getName), you Win!!!")
-            game.hitPlayer = false
-        }
-    case "pass":
-        print(game.computerVsPlayer())
+    print("Your starting hand is...")
+    sleep(1)
+    game.startHand()
+    if game.player.score == 21 {
+        sleep(1)
+        print("\nBLACKJACK 🤑🤑🤑... You Win!!!")
+        game.newGame()
         game.hitPlayer = false
-    default:
-        print("please select \"hit\" or \"pass\"")
     }
-        
-    } while game.hitPlayer
-
+    if game.player.score != 21 {
+        repeat {
+            print("\nPlease select \"hit\" or \"stand\"")
+            let userSelection = readLine() ?? ""
+            let userSelectionLower = userSelection.lowercased()
+        switch userSelectionLower {
+        case "hit":
+            game.hitMe()
+            game.hitPlayer = true
+            if game.player.score > 21 {
+                sleep(1)
+                print("\nUh Oh \(getName)... you Busted!!!")
+                game.hitPlayer = false
+            } else if game.player.score == 21 {
+                sleep(1)
+                print("\nBLACKJACK 🤑🤑🤑... Way to go \(getName), you Win!!!")
+                game.hitPlayer = false
+            }
+        case "stand":
+            print(game.computerVsPlayer())
+            game.hitPlayer = false
+        default:
+            print("please select \"hit\" or \"pass\"")
+        }
+            
+        } while game.hitPlayer
+    }
     var askAgain = true
     while askAgain == true {
         print("\nWould you like to play again \"yes\" or \"no\"")
